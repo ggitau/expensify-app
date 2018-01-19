@@ -6,5 +6,5 @@ const ExpenseDashboardPage = () => (
         <ExpenseListFilters/>
         <ExpenseList/>
     </div>
-)
+);
 export default ExpenseDashboardPage;
