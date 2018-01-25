@@ -11,7 +11,7 @@ export class ExpensesSummary extends React.Component{
                 <p>
                 Viewing {this.props.expensesCount}
                 {
-                    this.props.expensesCount>1 || this.props.expensesCount == 0
+                    this.expensesCount !== 1
                     ? ' expenses '
                     :' expense '
                 }
@@ -22,9 +22,11 @@ export class ExpensesSummary extends React.Component{
     }
 }
 const mapStateToProps = (state) => {
+    const expenses=visibleExpenses(state.expenses,state.filters);
+    const total=totalExpenses(expenses)/100;
     return {
-        expensesTotal:numeral(totalExpenses(visibleExpenses(state.expenses,state.filters))/100).format('$0,0.00'),
-        expensesCount:visibleExpenses(state.expenses,state.filters).length
+        expensesTotal:numeral(total).format('$0,0.00'),
+        expensesCount:expenses.length
     };
 };
 export default connect(mapStateToProps)(ExpensesSummary);

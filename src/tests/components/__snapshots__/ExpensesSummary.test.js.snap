@@ -17,7 +17,7 @@ exports[`should correctly render ExpensesSummary when expenses count = 1  1`] = 
   <p>
     Viewing 
     1
-     expense 
+     expenses 
     totalling 
     $19.23
   </p>
