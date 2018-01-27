@@ -30,7 +30,6 @@ export const removeExpense=({id}={})=>({
 });
 
 export const startRemoveExpense = ({id}={}) => {
-    console.log('removing expenses',id);
     return (dispatch) => {
         return database.ref(`expenses/${id}`).remove()
         .then(() => {
